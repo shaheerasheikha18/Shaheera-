@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Event Registration Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🎓 College Event Registration Portal</h1>
+    <nav>
+      <button class="tab active" id="tabEvents">Events</button>
+      <button class="tab" id="tabMine">My Registrations</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Events section -->
+    <section id="eventsSection">
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search events by name..." />
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+        </select>
+        <input type="date" id="dateFilter" />
+        <button id="clearFilters" class="btn secondary">Clear</button>
+      </div>
+      <div id="eventsGrid" class="grid"></div>
+      <p id="noEvents" class="empty hidden">No events found.</p>
+    </section>
+
+    <!-- My registrations section -->
+    <section id="mineSection" class="hidden">
+      <div class="filters">
+        <input type="email" id="myEmail" placeholder="Enter your email to view registrations" />
+        <button id="showMine" class="btn primary">Show</button>
+      </div>
+      <div id="myGrid" class="grid"></div>
+      <p id="noMine" class="empty hidden">No registrations found.</p>
+    </section>
+  </main>
+
+  <!-- Event details + registration modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-x" id="closeModal">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
